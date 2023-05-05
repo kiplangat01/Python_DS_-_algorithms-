@@ -1,3 +1,4 @@
+# creating turple
 tuple1 = (2,4,6,7,3)
 
 
