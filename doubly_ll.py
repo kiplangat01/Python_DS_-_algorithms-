@@ -1,14 +1,15 @@
+# class for a node 
 class Node:
     def __init__(self, data):
         self.data = data
         self.nref = None
         self.pref = None
 
-
+# class fo doubly linkedlis
 class doublyll:
     def __init__(self):
         self.head = None 
-
+# function to print linkedlist
     def print_LL(self):
         if self.head is None:
             print("Linked List is empty!")
@@ -17,6 +18,8 @@ class doublyll:
             while n is not None:
                 print(n.data,"-->",end=" ")
                 n = n.nref
+
+# function to print ll from the last node 
     def print_LL_reverse(self):
         if self.head is None:
             print("Linked List is empty!")
@@ -28,6 +31,7 @@ class doublyll:
                 print(n.data,"-->",end=" ")
                 n = n.pref
 
+# inserting element to an empty list
     def insert_empty(self,data):
         if self.head is None:
             new_node = Node(data)
@@ -35,6 +39,7 @@ class doublyll:
         else:
             print("Linked List is not empty!")
 
+# adding element from the begining of a list
     def add_begin(self,data):
             new_node = Node(data)
             if self.head is None:
@@ -44,6 +49,7 @@ class doublyll:
                 self.head.pref = new_node
                 self.head = new_node
 
+# adding elements from the end of a list
     def add_end(self,data):
             new_node = Node(data)
             if self.head is None:
@@ -54,6 +60,8 @@ class doublyll:
                     n = n.nref
                 n.nref = new_node
                 new_node.pref = n
+
+# adding element after a specific node
     def add_after(self,data,x):
         n = self.head
         while n is not None:
@@ -73,6 +81,7 @@ class doublyll:
             n.nref = new_node
             new_node.pref = n
 
+# adding element after a certain node
     def add_before(self,data,x):
         if self.head is None:
             print("Linked List is Empty!")
@@ -97,6 +106,7 @@ class doublyll:
             n.nref.pref = new_node            
             n.nref = new_node
 
+# deleting the first element in the linkedlist
     def delete_begin(self):
         if self.head is None:
             print("DLL is empty can't delte !")
@@ -107,7 +117,8 @@ class doublyll:
         else:
             self.head = self.head.nref
             self.head.pref = None
-            
+
+# deleting elements from the end of the list
     def delete_end(self):
         if self.head is None:
             print("DLL is empty can't delte !")
@@ -121,6 +132,7 @@ class doublyll:
                 n = n.nref
             n.pref.nref = None
 
+# deleting element using specified value
     def delete_by_value(self,x):
         if self.head is None:
             print("DLL is empty can't delte !")
